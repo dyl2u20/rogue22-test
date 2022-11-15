@@ -1,12 +1,14 @@
 # This is a basic workflow demonstrating how to use actions to build java projects with maven
+# Note - this is only a demonstration, a java project containing a pom.xml file must be pushed to work
+# Useful link: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
+
 name: Java Maven CI
 
 # Used for automatically triggering a workflow given an event
 on:
 # Specifying the event, can be multiple such as [push, fork]
   push:
-  # Can specify branches
-  # Test
+  # The following steps will only trigger on pushes to the dev branch
     branches: dev
 
 jobs:
