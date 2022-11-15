@@ -1,11 +1,12 @@
 # This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
-# For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#apache-maven-with-a-settings-path
 
 name: Java Maven CI
 
+# Used for automatically triggering a workflow given an event
 on:
+# Specifying the event, can be multiple such as [push, fork]
   push:
-    branches: [ main ]
+    branches: dev
 
 jobs:
   build:
@@ -14,14 +15,22 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    # can provide names to steps for clarity
     - name: Set up JDK 11
       uses: actions/setup-java@v3
       with:
-        java-version: '11' # java 11 most commonly used ver today 
+        java-version: '11' # java 11 used for this example 
         distribution: 'temurin' # vendor used for this example
 
     - name: Build with Maven
+    # pom.xml file should be generated when creating the project in intellij
       run: mvn -B package --file pom.xml
       
     - name: List current directory
       run: ls -a
+    
+    # Target folder should be generated when running maven
+    - name: List target folder contents
+      run: |
+        cd target
+        ls -a
