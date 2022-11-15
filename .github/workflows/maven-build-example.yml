@@ -1,12 +1,12 @@
-# This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
-
+# This is a basic workflow demonstrating how to use actions to build java projects with maven
 name: Java Maven CI
 
 # Used for automatically triggering a workflow given an event
 on:
 # Specifying the event, can be multiple such as [push, fork]
   push:
-    branches: dev
+  # Can specify branches
+    branches: testofrerror
 
 jobs:
   build:
