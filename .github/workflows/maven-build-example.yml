@@ -6,6 +6,7 @@ on:
 # Specifying the event, can be multiple such as [push, fork]
   push:
   # Can specify branches
+  # Test
     branches: testofrerror
 
 jobs:
