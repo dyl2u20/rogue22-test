@@ -7,7 +7,7 @@ on:
   push:
   # Can specify branches
   # Test
-    branches: testofrerror
+    branches: dev
 
 jobs:
   build:
