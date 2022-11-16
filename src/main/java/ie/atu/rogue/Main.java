@@ -10,6 +10,6 @@ public class Main {
         String username = "dylan";
         String password = "walsh";
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/test?" +
-                "user=" + username + "&password=" + password); // Sensitive
+                "user=" + username + "&password=" + password);
     }
 }
